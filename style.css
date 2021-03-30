@@ -160,10 +160,12 @@ input[type=number] {-moz-appearance: textfield;}
     flex-direction: column;
     position: relative;
     background: white;
-    padding: 20px;
+    padding: 20px 20px 30px 20px;
     border: 1px solid  #baab8f;
     margin: 50px 0;
     align-items: center;
+}
+.datenow {
 }
 .listcontent {
     margin-top: 20px;
@@ -174,6 +176,18 @@ input[type=number] {-moz-appearance: textfield;}
     height: 60px;
     top: -40px;
     right: 20px;
+}
+.copyButton {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    background: #baab8f;
+    padding: 5px 15px;
+    cursor: pointer;
+    color: #131313;
+    font-weight: 600;
+
+
 }
 
 @media (max-width: 1200px) {
@@ -203,6 +217,9 @@ input[type=number] {-moz-appearance: textfield;}
     .submit-button {
         grid-column: 1 / 2;
     }
+    span {
+        font-size: 20px;
+    }
     .listcontent {
         margin-top: 20px;
         column-count: 1;
@@ -213,6 +230,9 @@ input[type=number] {-moz-appearance: textfield;}
         }
         nav {
             padding: 20px ;
+        }
+        span {
+            font-size: 4vw;
         }
         .helpbutton:hover {
             box-shadow: none;

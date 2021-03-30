@@ -111,7 +111,13 @@ const formcontent = [
 
 function creatList() {
 
-    let listtext = "";
+    // get date
+    const date = new Date();
+    let month = ((date.getMonth()+1) < 10 ) ? ("0" + (date.getMonth()+1)) : (date.getMonth()+1);
+    document.querySelector(".datenow").innerHTML = `Zamówienie: ${date.getDate()}-${month}-${date.getUTCFullYear()}`;
+    
+    
+    let listtext= "";
 
     // Odczyt wartości
     for (i=0; i < (formcontent.length/5); i++){
@@ -134,11 +140,25 @@ function creatList() {
             }
     }
     // 
+    if (listtext === "") {
+        alert("Nie można wydrukować pustej listy zamówień.");
+        return;}
+    else {
     list.style.display = "flex";
+    }
     listcontent.innerHTML = listtext;
-    document.querySelector("body").scrollIntoView({ behavior: 'smooth', block: 'end'});
+
+    setTimeout(scrollAtTheEnd, 1);
+    
 };
  
+  // smooth scroll at end of list 
+function scrollAtTheEnd () {
+    document.querySelector("body").scrollIntoView({ behavior: 'smooth', block: 'end'})
+}
 
-
-                
+ //copy to clipboard 
+ const copyButton = document.querySelector(".copyButton");
+ copyButton.addEventListener('click', () => {
+     alert("Skopiowano zamówienie do schowka")
+ })
