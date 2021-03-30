@@ -2,7 +2,8 @@
     padding: 0;
     box-sizing: border-box;
     -moz-box-sizing:border-box;
-    -webkit-box-sizing:border-box; }
+    -webkit-box-sizing:border-box; 
+    overflow-x: hidden;}
 
 body {
     background-color: #171717;
@@ -11,9 +12,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
-    touch-action: none;
-    -ms-touch-action: none;
+    position: relative;
+	overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;}
 
 nav {
