@@ -12,6 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
+    touch-action: none;
+    -ms-touch-action: none;
     font-family: 'Montserrat', sans-serif;}
 
 nav {
@@ -187,7 +189,7 @@ input[type=number] {-moz-appearance: textfield;}
         grid-template-columns: 1fr ;
     }
     .form {
-        grid-template-columns: 250px 250px;
+        grid-template-columns: 300px 200px;
         grid-gap: 20px;
     }
     .container div:first-child  {
@@ -205,12 +207,19 @@ input[type=number] {-moz-appearance: textfield;}
         body {
             align-items: stretch;
         }
+        nav {
+            padding: 20px ;
+        }
+        .helpbutton:hover {
+            box-shadow: none;
+            transform: none;
+        }
         .container {
             margin: 170px 20px 20px 20px;
         }
         .form {
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 20px;
+            grid-template-columns: 3fr 2fr;
+            grid-gap: 5px;
         }
         .list {
             margin: 20px;
