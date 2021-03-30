@@ -3,8 +3,8 @@
     box-sizing: border-box;
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box; 
-    overflow-x: hidden;}
-
+    ;}
+html {overflow-x: hidden;}
 body {
     background-color: #171717;
     min-height: 100vh;
@@ -202,6 +202,10 @@ input[type=number] {-moz-appearance: textfield;}
     }
     .submit-button {
         grid-column: 1 / 2;
+    }
+    .listcontent {
+        margin-top: 20px;
+        column-count: 1;
     }
     @media (max-width: 580px) {
         body {
