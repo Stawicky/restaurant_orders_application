@@ -4,7 +4,7 @@
 const inputs = document.querySelectorAll('.form input');
 
 inputs.forEach( input => {
-    input.addEventListener("click", changeInput );
+    input.addEventListener("focus", changeInput );
 })
 function changeInput() {
     this.value =""
@@ -73,8 +73,8 @@ const formcontent = [
                      "Sok czarna porzeczka: ", "#sok_porzeczka" , 12 , " litrów", 6,
                      "Pepsi PET: ", "#pepsi_pet" , 30 , " butelek", 15,
                      "7up PET: ", "#seven_up_pet" , 30 , " butelek", 15,
-                     "lech Free Lager: ", "#lech_lager" , 12 , " 6-paków", 1,
-                     "lech Free Lime: ", "#lech_lime" , 12 , " 6-paków", 1,
+                     "Lech Free Lager: ", "#lech_lager" , 12 , " sześciopaków", 1,
+                     "Lech Free Lime: ", "#lech_lime" , 12 , " sześciopaków", 1,
                      "Redbull: ", "#redbull" , 30 , " puszek", 12,
                      //high-proof alcohole
                      "Jack Daniel's No.7 : ", "#jd" , 45 , " ", 12,
@@ -147,7 +147,6 @@ function creatList() {
     list.style.display = "flex";
     }
     listcontent.innerHTML = listtext;
-
     setTimeout(scrollAtTheEnd, 1);
     
 };
@@ -160,5 +159,17 @@ function scrollAtTheEnd () {
  //copy to clipboard 
  const copyButton = document.querySelector(".copyButton");
  copyButton.addEventListener('click', () => {
-     alert("Skopiowano zamówienie do schowka")
+     copyText(document.querySelector('.listcontent'))
+     alert("Skopiowano zamówienie do schowka");
  })
+
+ function copyText(htmlElement) {
+     if (!htmlElement) {return;}
+     let elementText= htmlElement.innerText;
+     let textAreaElement = document.createElement('textarea');
+     textAreaElement.innerHTML= elementText;
+     document.body.appendChild(textAreaElement);
+     textAreaElement.select();
+     document.execCommand('copy');
+     textAreaElement.parentNode.removeChild(textAreaElement);
+ }
